@@ -55,14 +55,14 @@ def writeFile(rows):
 
 def main():
      createCsv()
-
+     
      if os.path.exists(file_to_read):
         rows = getHeaderAndRows(file_to_read)
         writeFile(rows)
      else:
         print("Rekt.  The file '" + file_to_read + "' does not exist.")
         print("Check the 'file_to_read' variable in the code.")
-
+     
      sendSyslog()
 
 if __name__ == "__main__":
