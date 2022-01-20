@@ -5,7 +5,6 @@ import os.path
 import logging
 
 header = []
-rows = []
 file_to_read = "/opt/ngp/artemis.csv"
 file_to_write = "/opt/ngp/send_to_splunk.csv"
 splunk_server = "10.4.30.137"
@@ -35,12 +34,10 @@ def getHeaderAndRows(fn):
 
      rows = []
      for row in csvreader:
-          line = []
-          line = row
           x = 0
           result = ""
           for item in row:
-               result = result + header[x] + "=\"" + line[x] + "\";"
+               result = result + header[x] + "=\"" + row[x] + "\";"
                x = x + 1
           rows.append(result)
      file.close()
